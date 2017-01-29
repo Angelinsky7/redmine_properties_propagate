@@ -1,0 +1,10 @@
+# English strings go here for Rails i18n
+en:
+  # my_label: "My label"
+  :edit_properties_propagate: "Can use the propagate system"
+  #:copy_target_version_subtask: ""
+  #:task_status_ids: ""
+  :label_setting_copy_target_version_subtask: "Copy the target version of the parent into subtasks"
+  :label_setting_tracker_parent_task_ids: "Trackers that have the behavior"
+  :label_setting_set_target_version_subtask: "Set the target version of the subtasks from parent"
+  :label_setting_tracker_child_task_ids: "Trackers that have the behavior"

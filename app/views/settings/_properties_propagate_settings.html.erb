@@ -1,0 +1,29 @@
+<fieldset>
+  <p>
+    <label><%= l(:label_setting_copy_target_version_subtask) %>:</label>
+    <%= hidden_field_tag('settings[copy_target_version_subtask]', 0) %>
+    <%= check_box_tag('settings[copy_target_version_subtask]', 1,
+                      PropertiesPropagate::Setting.copy_target_version_subtask) %>
+  </p>
+  <p>
+    <label><%= l(:label_setting_tracker_parent_task_ids) %>:</label>
+    <%- trackers = Tracker.all.collect{|t| [t.name, t.id]} -%>
+    <%- options = options_for_select(trackers, PropertiesPropagate::Setting.tracker_parent_task_ids) -%>
+    <%= select_tag 'settings[tracker_parent_task_ids]', options, :multiple => true %>
+  </p>    
+</fieldset>
+
+<fieldset>
+  <p>
+    <label><%= l(:label_setting_set_target_version_subtask) %>:</label>
+    <%= hidden_field_tag('settings[set_target_version_subtask]', 0) %>
+    <%= check_box_tag('settings[set_target_version_subtask]', 1,
+                      PropertiesPropagate::Setting.set_target_version_subtask) %>
+  </p>
+  <p>
+    <label><%= l(:label_setting_tracker_child_task_ids) %>:</label>
+    <%- trackers = Tracker.all.collect{|t| [t.name, t.id]} -%>
+    <%- options = options_for_select(trackers, PropertiesPropagate::Setting.tracker_child_task_ids) -%>
+    <%= select_tag 'settings[tracker_child_task_ids]', options, :multiple => true %>
+  </p>    
+</fieldset>
