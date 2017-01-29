@@ -6,8 +6,8 @@ Redmine::Plugin.register :properties_propagate do
   author 'Steven de Marco'
   description 'Propagate some properties to child task'
   version '0.0.1'
-  url 'http://example.com/path/to/plugin'
-  author_url 'http://example.com/about'
+  url 'https://github.com/Angelinsky7/redmine_properties_propagate.git'
+  author_url 'https://github.com/Angelinsky7/redmine_properties_propagate.git'
 
   project_module :properties_propagate do
     permission :edit_properties_propagate, {}
