@@ -1,4 +1,4 @@
-module PropertiesPropagate
+module RedminePropertiesPropagate
   class Setting
 
     %w(copy_target_version_subtask
@@ -36,8 +36,8 @@ module PropertiesPropagate
 private
 
     def self.setting_or_default(setting)
-      ::Setting.plugin_properties_propagate[setting] || 
-      Redmine::Plugin::registered_plugins[:properties_propagate].settings[:default][setting]
+      ::Setting.plugin_redmine_properties_propagate[setting] || 
+      Redmine::Plugin::registered_plugins[:redmine_properties_propagate].settings[:default][setting]
     end
 
     def self.setting_or_default_boolean(setting)
@@ -45,7 +45,7 @@ private
     end
 
     def self.collect_ids(setting)
-      (::Setting.plugin_properties_propagate[setting] || []).collect{|value| value.to_i}
+      (::Setting.plugin_redmine_properties_propagate[setting] || []).collect{|value| value.to_i}
     end
 
   end
