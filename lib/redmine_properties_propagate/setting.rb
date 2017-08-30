@@ -36,7 +36,7 @@ module RedminePropertiesPropagate
 private
 
     def self.setting_or_default(setting)
-      ::Setting.plugin_redmine_properties_propagate[setting] || 
+      ::Setting.plugin_redmine_properties_propagate[setting.to_s] || 
       Redmine::Plugin::registered_plugins[:redmine_properties_propagate].settings[:default][setting]
     end
 
@@ -45,7 +45,7 @@ private
     end
 
     def self.collect_ids(setting)
-      (::Setting.plugin_redmine_properties_propagate[setting] || []).collect{|value| value.to_i}
+      (::Setting.plugin_redmine_properties_propagate[setting.to_s] || []).collect{|value| value.to_i}
     end
 
   end
